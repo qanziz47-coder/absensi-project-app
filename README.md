@@ -1,6 +1,6 @@
 # 📋 Sistem Absensi RFID Berbasis IoT
 
-Sistem absensi sekolah modern yang mengintegrasikan perangkat keras (ESP32) dengan aplikasi mobile (Android) dan dashboard web (PHP)**.
+>Sistem absensi sekolah modern yang mengintegrasikan perangkat keras (ESP32) dengan aplikasi mobile (Android) dan dashboard web (PHP).
 
 ## ✨ Fitur Utama
 
