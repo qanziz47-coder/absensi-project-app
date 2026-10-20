@@ -59,7 +59,7 @@
 
 ## 📸 Dokumentasi 
 
-*(Tempatkan gambar-gambar screenshot di sini. Kamu bisa upload gambar ke GitHub, lalu paste link-nya di bawah ini)*
+*(sabar belum ada ini foto sama videonya di tunggu aja nanti akan di update)*
 
 **Dashboard Admin:**
 ![Dashboard Admin](link_gambar_dashboard_kamu)
