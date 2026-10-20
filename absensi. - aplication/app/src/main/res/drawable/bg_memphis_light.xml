@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna Dasar Putih Tulang -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F4F7F6" />
+        </shape>
+    </item>
+
+    <!-- Lingkaran Biru (Kanan Atas, mentok pojok) -->
+    <item android:right="-50dp" android:top="-50dp" android:width="150dp" android:height="150dp">
+        <shape android:shape="oval">
+            <solid android:color="#E3F2FD" />
+        </shape>
+    </item>
+
+    <!-- Lingkaran Kuning (Kiri Bawah, mentok pojok) -->
+    <item android:left="-60dp" android:bottom="-60dp" android:width="180dp" android:height="180dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFF9C4" />
+        </shape>
+    </item>
+</layer-list>

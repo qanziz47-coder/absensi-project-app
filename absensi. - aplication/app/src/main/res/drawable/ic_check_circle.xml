@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="150dp"
+    android:viewportWidth="612"
+    android:viewportHeight="792">
+
+    <!-- Lingkaran Luar -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#41AD49"
+        android:strokeWidth="45"
+        android:pathData="M306,629.5c128.8,0,233.5,-104.7,233.5,-233.5S434.8,162.5,306,162.5S72.5,267.2,72.5,396S177.2,629.5,306,629.5L306,629.5z" />
+
+    <!-- Ikon Centang -->
+    <path
+        android:fillColor="#41AD49"
+        android:pathData="M421.4,271L241.9,450.5L174.9,383.5L122,436.4L241.9,556.2L257.3,540.8L257.4,540.8L474.3,323.9L421.4,271z" />
+
+</vector>

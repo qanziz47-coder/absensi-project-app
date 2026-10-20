@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna Dasar Biru Gelap -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0B1B3D"
+                android:endColor="#1E3A8A"
+                android:angle="45" />
+        </shape>
+    </item>
+
+    <!-- Lingkaran Dekoratif Kiri Atas -->
+    <item android:left="-100dp" android:top="-100dp">
+        <shape android:shape="oval">
+            <solid android:color="#1AFFFFFF" />
+            <size android:width="300dp" android:height="300dp" />
+        </shape>
+    </item>
+
+    <!-- Lingkaran Dekoratif Kanan Bawah -->
+    <item android:right="-100dp" android:bottom="-100dp">
+        <shape android:shape="oval">
+            <solid android:color="#10FFFFFF" />
+            <size android:width="350dp" android:height="350dp" />
+        </shape>
+    </item>
+</layer-list>
