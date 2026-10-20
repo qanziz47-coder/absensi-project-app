@@ -1,5 +1,8 @@
 # 📋 Sistem Absensi RFID Berbasis IoT
-
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 >Sistem absensi sekolah modern yang mengintegrasikan perangkat keras (ESP32) dengan aplikasi mobile (Android) dan dashboard web (PHP).
 
 ## ✨ Fitur Utama
