@@ -1,3 +1,7 @@
+<div align="center">
+   <img src="absensi-cover.png" />
+</div>
+
 # 📋 Sistem Absensi RFID Berbasis IoT
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
