@@ -1,7 +1,6 @@
-  </div> <!-- Penutup main-content -->
+  </div> 
 
   <script>
-    // Jam Real-time
     function updateClock() {
       const clockElement = document.getElementById('clock');
       if (clockElement) {
@@ -15,20 +14,13 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Logika Menyembunyikan Overlay Loading
     window.addEventListener('load', function() {
       const overlay = document.getElementById('loading-overlay');
-      const durasiTampil = 1600; 
-
       setTimeout(() => {
-        if (overlay) {
-          overlay.classList.add('hidden');
-        }
-      }, durasiTampil);
+        if (overlay) overlay.classList.add('hidden');
+      }, 1000);
     });
 
-        // --- FUNGSI POP-UP KUSTOM ---
-    // Fungsi ini menggantikan alert() dan confirm() bawaan browser
     function showModal(title, message, type, callback) {
       const modal = document.getElementById('customModal');
       const icon = document.getElementById('modalIcon');
@@ -40,7 +32,6 @@
       titleEl.innerText = title;
       msgEl.innerText = message;
 
-      // Atur ikon dan warna tombol berdasarkan tipe
       if (type === 'danger') {
         icon.innerText = '⚠️';
         btnConfirm.style.background = '#EF4444';
@@ -57,13 +48,11 @@
 
       modal.classList.add('show');
 
-      // Tombol Konfirmasi
       btnConfirm.onclick = function() {
         modal.classList.remove('show');
         if (callback) callback(true);
       };
 
-      // Tombol Batal
       btnCancel.onclick = function() {
         modal.classList.remove('show');
         if (callback) callback(false);

@@ -3,14 +3,15 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// 1. Proteksi Login
+// Proteksi Login
 if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit;
 }
+
 require_once __DIR__ . '/../config/database.php';
 
-// 3. Ambil Data Admin
+// Ambil Data Admin
 if (isset($_SESSION['admin_id'])) {
     $admin_id = $_SESSION['admin_id'];
     $queryAdmin = $conn->query("SELECT * FROM admin WHERE id = $admin_id");
@@ -33,11 +34,10 @@ if (isset($_SESSION['admin_id'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title><?= isset($judul_halaman) ? $judul_halaman : 'Absen.'; ?></title>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
+  <link rel="shortcut icon" href="/absen-kartu/favicon.ico" type="image/x-icon">
+  <title><?= isset($judul_halaman) ? $judul_halaman : 'Absensi.'; ?></title>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-  <!-- Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
@@ -122,16 +122,7 @@ if (isset($_SESSION['admin_id'])) {
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     #loading-overlay.hidden { opacity: 0; visibility: hidden; }
 
-    /* --- RESPONSIVE (Mobile) --- */
-    @media (max-width: 768px) {
-      .sidebar { width: 100%; height: auto; position: relative; padding: 15px; }
-      .sidebar h2 { margin-bottom: 15px; }
-      .main-content { margin-left: 0; width: 100%; padding: 20px; }
-      .cards { flex-direction: column; }
-      .form-group { flex-direction: column; }
-    }
-        /* --- PROFIL ADMIN DI SIDEBAR --- */
-    /* --- PROFIL ADMIN DI SIDEBAR --- */
+    /* --- PROFIL ADMIN --- */
     .admin-profile {
       display: flex; align-items: center; gap: 12px;
       background: #312E81; padding: 12px; border-radius: 12px;
@@ -146,29 +137,7 @@ if (isset($_SESSION['admin_id'])) {
     .admin-role { font-size: 11px; color: #A5B4FC; }
     .lo{ font-size: 30px; font-weight: 700; color: #FFFFFF; margin-bottom:15px; }
 
-        /* --- RESPONSIVE DESIGN (Mobile & Tablet) --- */
-    @media (max-width: 768px) {
-      body { flex-direction: column; }
-      .sidebar { 
-        width: 100%; height: auto; position: relative; padding: 15px; 
-        flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 5px;
-      }
-      .sidebar h2 { width: 100%; margin-bottom: 15px; }
-      .sidebar a { margin-bottom: 0; padding: 8px 12px; font-size: 12px; }
-      .admin-profile { margin-bottom: 10px; width: 100%; justify-content: center; }
-      
-      /* Main Content */
-      .main-content { margin-left: 0; width: 100%; padding: 15px; }
-      .header { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .header h1 { font-size: 20px; }
-      .cards { flex-direction: column; }
-      
-      /* Tabel bisa di-scroll ke samping */
-      .panel { overflow-x: auto; }
-      table { min-width: 600px; } /* Biarkan tabel tetap lebar, tapi bisa di-scroll */
-    }
-
-        /* --- POP-UP  --- */
+    /* --- POP-UP --- */
     .modal-overlay {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.5); z-index: 9999;
@@ -200,6 +169,24 @@ if (isset($_SESSION['admin_id'])) {
       color: #FFF; border-radius: 10px; cursor: pointer; font-weight: 600; flex: 1;
     }
     .btn-confirm:hover { background: #DC2626; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      .sidebar { 
+        width: 100%; height: auto; position: relative; padding: 15px; 
+        flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 5px;
+      }
+      .sidebar h2 { width: 100%; margin-bottom: 15px; }
+      .sidebar a { margin-bottom: 0; padding: 8px 12px; font-size: 12px; }
+      .admin-profile { margin-bottom: 10px; width: 100%; justify-content: center; }
+      .main-content { margin-left: 0; width: 100%; padding: 15px; }
+      .header { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .header h1 { font-size: 20px; }
+      .cards { flex-direction: column; }
+      .panel { overflow-x: auto; }
+      table { min-width: 600px; }
+    }
   </style>
 </head>
 <body>
@@ -219,7 +206,7 @@ if (isset($_SESSION['admin_id'])) {
            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png';">
       <div class="admin-info">
         <div class="admin-name"><?= htmlspecialchars($dataAdmin['nama']) ?></div>
-        <div class="admin-role">@<?= htmlspecialchars($dataAdmin['username']) ?>terganteng</div>
+        <div class="admin-role">@<?= htmlspecialchars($dataAdmin['username']) ?></div>
       </div>
     </div>
     <a href="dashboard.php" class="<?= basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : '' ?>">Dashboard</a>
@@ -230,7 +217,7 @@ if (isset($_SESSION['admin_id'])) {
     <a href="logout.php" style="color: #F87171; margin-top: auto;">Logout</a>
   </div>
 
-  <!--  POP-UP  -->
+  <!-- POP-UP -->
   <div id="customModal" class="modal-overlay">
     <div class="modal-box">
       <div class="modal-icon" id="modalIcon">❓</div>
@@ -243,5 +230,5 @@ if (isset($_SESSION['admin_id'])) {
     </div>
   </div>
 
-  <!-- MAIN CONTENT (Dibuka di sini, ditutup di footer.php) -->
+  <!-- MAIN CONTENT -->
   <div class="main-content">
